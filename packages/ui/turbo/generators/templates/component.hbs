@@ -1,8 +1,13 @@
-export const {{ pascalCase name }} = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div>
-      <h1>{{ pascalCase name }} Component</h1>
-      {children}
-    </div>
-  );
+import type { ReactNode } from "react";
+
+type {{ pascalCase name }}Props = {
+  children?: ReactNode;
 };
+
+const {{ pascalCase name }} = ({ children }: {{ pascalCase name }}Props) => {
+  return <>{children}</>;
+};
+
+{{ pascalCase name }}.displayName = "{{ pascalCase name }}";
+
+export { {{ pascalCase name }} };
