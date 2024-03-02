@@ -1,5 +1,5 @@
 import { Slot } from "@radix-ui/react-slot";
-import type { HTMLAttributes, ReactNode } from "react";
+import type { HTMLAttributes } from "react";
 import { forwardRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
@@ -29,12 +29,10 @@ const headingVariants = tv(
   },
 );
 
-type HeadingProps = {
-  asChild?: boolean;
-  children?: ReactNode;
-  className?: string;
-} & HTMLAttributes<HTMLHeadingElement> &
-  VariantProps<typeof headingVariants>;
+type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
+  VariantProps<typeof headingVariants> & {
+    asChild?: boolean;
+  };
 
 const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ asChild, className, size, fluid, ...props }, ref) => {

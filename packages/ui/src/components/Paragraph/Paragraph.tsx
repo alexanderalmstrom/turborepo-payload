@@ -1,12 +1,10 @@
 import { Slot } from "@radix-ui/react-slot";
-import type { ReactNode } from "react";
-import { forwardRef, HTMLAttributes } from "react";
+import type { ComponentPropsWithRef } from "react";
+import { forwardRef } from "react";
 
-type ParagraphProps = {
+type ParagraphProps = ComponentPropsWithRef<"p"> & {
   asChild?: boolean;
-  children?: ReactNode;
-  className?: string;
-} & HTMLAttributes<HTMLParagraphElement>;
+};
 
 const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(
   ({ asChild, children, ...props }, ref) => {

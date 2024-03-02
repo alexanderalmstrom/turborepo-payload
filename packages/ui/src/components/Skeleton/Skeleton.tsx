@@ -1,6 +1,8 @@
+import type { ComponentPropsWithoutRef } from "react";
+
 import { cn } from "../../utils";
 
-type SkeletonProps = React.HTMLAttributes<HTMLDivElement>;
+type SkeletonProps = ComponentPropsWithoutRef<"div">;
 
 const Skeleton = ({ className, ...props }: SkeletonProps) => {
   return <div className={cn("animate-pulse bg-muted", className)} {...props} />;

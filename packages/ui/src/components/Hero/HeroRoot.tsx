@@ -1,16 +1,15 @@
 import { Slot } from "@radix-ui/react-slot";
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
 const heroRootVariants = tv({
   base: "relative grid overflow-hidden",
 });
 
-type HeroRootProps = {
-  asChild?: boolean;
-  children?: ReactNode;
-  className?: string;
-} & VariantProps<typeof heroRootVariants>;
+type HeroRootProps = ComponentPropsWithoutRef<"section"> &
+  VariantProps<typeof heroRootVariants> & {
+    asChild?: boolean;
+  };
 
 const HeroRoot = ({
   asChild,
